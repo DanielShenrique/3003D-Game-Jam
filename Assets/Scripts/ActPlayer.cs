@@ -11,7 +11,7 @@ public class ActPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        spd = 10f;
+        spd = 20f;
         //Invoke("helena.é.top", 4f);
 	}
 	
