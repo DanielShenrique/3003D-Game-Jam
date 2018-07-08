@@ -6,20 +6,30 @@ using UnityEngine.AI;
 public class Others : MonoBehaviour {
 
 
-	private GameObject others;
+	private GameObject[] targets;
 
 	private void Start()
 	{
-		others = GameObject.FindGameObjectWithTag("Player");
+		targets = GameObject.FindGameObjectsWithTag("Player");
 	}
+
 
 	private void Update()
 	{
-
 		if (gameObject.GetComponent<Static>().Pegador == true)
 		{
-			GetComponent<NavMeshAgent>().destination = others.transform.position;
-		}
+			foreach (GameObject g in targets)
+			{
+				foreach (Transform[] t in g.GetComponent<Transform>())
+				{
+					GetClosestOther(t);
+				}
+			}
+		}	
+	}
 
+
+	void GetClosestOther(Transform[] t_others)
+	{
 	}
 }

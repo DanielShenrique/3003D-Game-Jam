@@ -7,6 +7,7 @@ public class GOOD : MonoBehaviour {
     public GameObject[] players;
 
 	void Start () {
+
         Random.seed = System.DateTime.Now.Millisecond;
         int i = Random.Range(0, 3);
 
