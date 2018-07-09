@@ -11,18 +11,18 @@ public class RunningAround : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        if (GetComponent<Static>().Pegador == false)
+        {
+           movDir = ChooseDirection();
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-        if(GetComponent<Static>().Pegador == false)
-        {
-
-        }
+        Vector3.MoveTowards(transform.position,movDir, 2f);
 
 	}
+
 
     Vector3 ChooseDirection()
     {

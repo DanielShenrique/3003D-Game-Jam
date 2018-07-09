@@ -18,14 +18,19 @@ public class Others : MonoBehaviour {
     {
         if (GetComponent<Static>().Pegador == true)
         {
+            destiny = new Vector3(10000, 10000, 10000);
             foreach (GameObject g in objects)
             {
-                destiny = Vector3.zero;
-                /*if ()
+                if (g.GetInstanceID() != gameObject.GetInstanceID())
                 {
+                    if (Vector3.Distance(g.transform.position, transform.position) < Vector3.Distance(destiny, transform.position))
+                    {
+                        destiny = g.transform.position;
+                    }
+                }
 
-                }*/
             }
+            GetComponent<NavMeshAgent>().destination = destiny;
         }    
     }
 }
