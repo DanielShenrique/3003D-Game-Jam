@@ -19,7 +19,14 @@ public class RunningAround : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3.MoveTowards(transform.position,movDir, 2f);
+		if(GetComponent<Static>().Congelado == false)
+		{
+			Vector3.MoveTowards(transform.position, movDir, 2f);
+		}
+		if(GetComponent<Static>().Congelado == true)
+		{
+			Vector3.MoveTowards(transform.position, movDir, 0f);
+		}
 
 	}
 

@@ -33,4 +33,15 @@ public class Others : MonoBehaviour {
             GetComponent<NavMeshAgent>().destination = destiny;
         }    
     }
+
+	private void OnCollisionEnter(Collision coll)
+	{
+		if(GetComponent<Static>().Pegador == true)
+		{
+			if (coll.gameObject.tag.Equals("Player"))
+			{
+				coll.gameObject.GetComponent<Static>().Congelado = true;
+			}
+		}
+	}
 }

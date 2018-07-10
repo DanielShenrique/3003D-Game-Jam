@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3003D-Game-Jam", "3003D-Game-Jam.csproj", "{0B8CB107-DC6A-A125-C9BA-15DF8EA3ACE5}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3003D-Game-Jam", "Assembly-CSharp.csproj", "{CF412E81-C625-4959-361E-7B42427115AE}"
+>>>>>>> f39cc4873edc30c943b7010d1c6f5b542cd85abc
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
