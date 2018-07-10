@@ -9,6 +9,9 @@ public class Others : MonoBehaviour {
 
     private Vector3 destiny;
 
+	private GameObject stop;
+
+
     void Start()
     {
         objects = GameObject.FindGameObjectsWithTag("Player");
@@ -33,15 +36,4 @@ public class Others : MonoBehaviour {
             GetComponent<NavMeshAgent>().destination = destiny;
         }    
     }
-
-	private void OnCollisionEnter(Collision coll)
-	{
-		if(GetComponent<Static>().Pegador == true)
-		{
-			if (coll.gameObject.tag.Equals("Player"))
-			{
-				coll.gameObject.GetComponent<Static>().Congelado = true;
-			}
-		}
-	}
 }
