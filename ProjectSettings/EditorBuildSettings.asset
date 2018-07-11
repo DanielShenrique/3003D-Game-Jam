@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/IgorGameJam.unity
+    guid: c1cfe425232f34748ad471db275df0a2
+  - enabled: 1
+    path: Assets/Ganhou.unity
+    guid: 206cfdf23f94e7548b5031bb4976466a
+  - enabled: 1
+    path: Assets/Perdeu.unity
+    guid: 320ef03ebff35ec46abe7ee4dbe4ca9c

@@ -1,39 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Mov : MonoBehaviour {
 
-	public float vel;
-	public float pontoA;
-	public float pontoB;
-	
-	// Update is called once per frame
-	void Update () {
-		if(GetComponent<Static>().Pegador == false)
-		{
-			if(GetComponent<Static>().Congelado == false)
-			{
-				transform.Translate(vel * Time.deltaTime, 0, 0);
-				if (transform.position.x >= pontoA || transform.position.x <= pontoB)
-				{
-					vel *= -1;
-				}
-			}
-			if(GetComponent<Static>().Congelado == true)
-			{
-				Destroy(this.gameObject);
+	private NavMeshAgent nav;
+	private GameObject[] randomPoints;
+	private int currentRandom;
 
-			}
-
-		}
+	private void Start()
+	{
+		nav = this.gameObject.GetComponent<NavMeshAgent>();
+		randomPoints = GameObject.FindGameObjectsWithTag("RandomPoint");
 	}
 
-	private void OnCollisionEnter(Collision coll)
+	private void Update()
 	{
-		if(coll.gameObject.GetComponent<Static>().Pegador == true)
-		{
-			GetComponent<Static>().Congelado = true;
+		if (GetComponent<Static>().Pegador == false) {
+
+			if (nav.hasPath == false)
+			{
+				currentRandom = Random.Range(0, randomPoints.Length - 1);
+				nav.SetDestination(randomPoints[currentRandom].transform.position);
+			}
 		}
 	}
 }

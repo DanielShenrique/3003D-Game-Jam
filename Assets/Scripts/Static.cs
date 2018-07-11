@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Static : MonoBehaviour {
 
-    public string nome;
+   private string nome;
     private bool atordoado;
-    private bool congelado;
     private bool pegador;
 
-    public GameObject text;
+    private GameObject text;
 
     public bool Pegador {
         get {
@@ -28,28 +28,6 @@ public class Static : MonoBehaviour {
         }
     }
 
-    public bool Congelado
-    {
-        get
-        {
-            return congelado;
-        }
-        set
-        {
-            congelado = value;
-            if (congelado) {
-                int c = 0;
-                foreach (GameObject g in GameObject.Find("GameController").GetComponent<GOOD>().players) {
-                    if (g.GetComponent<Static>().Congelado) {
-                        c++;
-                    }
-                }
-                if (c == GameObject.Find("GameController").GetComponent<GOOD>().players.Length -1) {
-                    print("pegador wins");
-                }
-            }
-        }
-    }
     public bool Atordoado
     {
         get
@@ -77,4 +55,24 @@ public class Static : MonoBehaviour {
         atordoado = false;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag =="Player") {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        int c = 0;
+        for (int i = 0; i < GameObject.FindGameObjectsWithTag("ini").Length ; i++)
+        {
+            c++;
+        }
+        if (c <= 0)
+        {
+            SceneManager.LoadScene("Ganhou");
+        }
+        print(c + " conta");
+    }
 }

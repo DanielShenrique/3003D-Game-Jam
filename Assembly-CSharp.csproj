@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{CF412E81-C625-4959-361E-7B42427115AE}</ProjectGuid>
+    <ProjectGuid>{ED963539-C305-BD42-EC6E-00EE44534D46}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,16 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ActPlayer.cs" />
+    <Compile Include="Assets\Scripts\CameraFollowRotate.cs" />
+    <Compile Include="Assets\Scripts\GBBehaviour.cs" />
     <Compile Include="Assets\Scripts\GOOD.cs" />
     <Compile Include="Assets\Scripts\Mov.cs" />
     <Compile Include="Assets\Scripts\Others.cs" />
+    <Compile Include="Assets\Scripts\Personagemcontrole.cs" />
     <Compile Include="Assets\Scripts\Static.cs" />
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/danie/Documents/GitHub/3003D-Game-Jam/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
+    <Compile Include="Assets\Scripts\Timer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/danie/Documents/GitHub/3003D-Game-Jam/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/danie/Downloads/IgorGameJam2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/danie/Downloads/IgorGameJam2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
